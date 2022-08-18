@@ -1,0 +1,169 @@
+*{
+  margin: 0;
+  box-sizing: border-box;
+}
+
+$primary: #fbeab2;
+$secondary: #34353a;
+$text: rgba($color: #fff, $alpha: .8);
+$stopwatch-width: 40vh;
+$btn-opacity: .5;
+
+html{
+  height: fill-available;
+}
+
+body{
+  background: $secondary;
+  font-family: sans-serif;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+.stopwatch{
+  max-width: $stopwatch-width;
+  color: $text;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+
+  .time-cont{
+    width: $stopwatch-width;
+    height: $stopwatch-width;
+    border: 1.2vh solid rgba($color: #000, $alpha: .4);
+    border-radius: 50%;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    .time{
+      font-size: 7vh;
+      line-height: 5.4vh;
+      text-align: right;
+      :nth-child(2){ font-size: 4.8vh; }
+    }
+  }
+
+  .laps{
+    height: 11vh;
+    padding: 0 2vh;
+    margin: 2vh 0;
+    line-height: 3.2vh;
+    letter-spacing: .1vh;
+    font-size: 2vh;
+    overflow-y: scroll;
+  }
+
+  nav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // input
+    input{ display: none; }
+    input:checked{
+      & + label{
+        width: 18vh;
+        border-radius: 3vh;
+        .play{ display: none; }
+        .pause{ display: block; }
+      }
+      & ~ #lapBtn{ visibility: visible; }
+    }
+    // play button
+    label{
+      transition: .2s;
+      width: 12vh;
+      height: 12vh;
+      background: $primary;
+      border-radius: 50%;
+      margin: 0 3.2vh;
+      .play, .pause{ &::after{ background-size: 2vh; } }
+      .play::after{ background-image: url('./images/play.svg'); }
+      .pause{
+        display: none;
+        &::after{ background-image: url('./images/pause.svg'); }
+      }
+    }
+    // side nav buttons
+    #resetBtn, #lapBtn{
+      visibility: hidden;
+      width: 7vh;
+      height: 7vh;
+      background: lighten($color: $secondary, $amount: 50);
+      border-radius: 50%;
+      &::after{ background-size: 2.5vh; }
+    }
+    #resetBtn::after{ background-image: url('./images/reset.svg'); }
+    #lapBtn::after{ background-image: url('./images/lap.svg'); }
+    // all buttons
+    label, #resetBtn, #lapBtn{
+      cursor: pointer;
+      user-select: none;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      &:hover{ filter: brightness(90%); }
+    }
+    label .play, label .pause, #resetBtn, #lapBtn{
+      &::after{
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+        opacity: $btn-opacity;
+        border-radius: 50%;
+      }
+    } 
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+::-webkit-scrollbar {
+  width: 1vh;
+}
+::-webkit-scrollbar-track {
+  background: transparent; 
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(110, 110, 110, 0.5);
+  border-radius: .5vh;
+  background-clip: border-box;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(110, 110, 110, 0.8);
+}
+::-webkit-scrollbar-corner {
+  background: rgba(0,0,0,0);
+}

@@ -1,0 +1,154 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #34353a;
+  font-family: sans-serif;
+  height: 100vh;
+}
+
+.stopwatch {
+  max-width: 40vh;
+  margin: 0 auto;
+  position: relative;
+  top: 50vh;
+  transform: translateY(-50%);
+  color: rgba(255, 255, 255, 0.8);
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+.stopwatch .time-cont {
+  width: 40vh;
+  height: 40vh;
+  border: 1.2vh solid rgba(0, 0, 0, 0.4);
+  border-radius: 50%;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+}
+.stopwatch .time-cont .time {
+  font-size: 7vh;
+  line-height: 5.4vh;
+  text-align: right;
+}
+.stopwatch .time-cont .time :nth-child(2) {
+  font-size: 4.8vh;
+}
+.stopwatch .laps {
+  height: 11vh;
+  padding: 0 2vh;
+  margin: 2vh 0;
+  line-height: 3.2vh;
+  letter-spacing: 0.1vh;
+  font-size: 2vh;
+  overflow-y: scroll;
+}
+.stopwatch nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.stopwatch nav input {
+  display: none;
+}
+.stopwatch nav input:checked + label {
+  width: 18vh;
+  border-radius: 3vh;
+}
+.stopwatch nav input:checked + label .play {
+  display: none;
+}
+.stopwatch nav input:checked + label .pause {
+  display: block;
+}
+.stopwatch nav input:checked ~ #lapBtn {
+  visibility: visible;
+}
+.stopwatch nav label {
+  transition: 0.2s;
+  width: 12vh;
+  height: 12vh;
+  background: #fbeab2;
+  border-radius: 50%;
+  margin: 0 3.2vh;
+}
+.stopwatch nav label .play::after, .stopwatch nav label .pause::after {
+  background-size: 2vh;
+}
+.stopwatch nav label .play::after {
+  background-image: url("./images/play.svg");
+}
+.stopwatch nav label .pause {
+  display: none;
+}
+.stopwatch nav label .pause::after {
+  background-image: url("./images/pause.svg");
+}
+.stopwatch nav #resetBtn, .stopwatch nav #lapBtn {
+  visibility: hidden;
+  width: 7vh;
+  height: 7vh;
+  background: #b3b4ba;
+  border-radius: 50%;
+}
+.stopwatch nav #resetBtn::after, .stopwatch nav #lapBtn::after {
+  background-size: 2.5vh;
+}
+.stopwatch nav #resetBtn::after {
+  background-image: url("./images/reset.svg");
+}
+.stopwatch nav #lapBtn::after {
+  background-image: url("./images/lap.svg");
+}
+.stopwatch nav label, .stopwatch nav #resetBtn, .stopwatch nav #lapBtn {
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.stopwatch nav label:hover, .stopwatch nav #resetBtn:hover, .stopwatch nav #lapBtn:hover {
+  filter: brightness(90%);
+}
+.stopwatch nav label .play::after, .stopwatch nav label .pause::after, .stopwatch nav #resetBtn::after, .stopwatch nav #lapBtn::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.5;
+  border-radius: 50%;
+}
+
+::-webkit-scrollbar {
+  width: 1vh;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(110, 110, 110, 0.5);
+  border-radius: 0.5vh;
+  background-clip: border-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(110, 110, 110, 0.8);
+}
+
+::-webkit-scrollbar-corner {
+  background: rgba(0, 0, 0, 0);
+}/*# sourceMappingURL=index.css.map */
