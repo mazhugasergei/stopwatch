@@ -84,8 +84,7 @@ function App() {
       {/* Time Container */}
       <div className="time-cont">
         <div className="time">
-          <div>{ m + s }</div>
-          <div>{ ms }</div>
+          <div>{ m + s + "." + ms }</div>
         </div>
       </div>
 

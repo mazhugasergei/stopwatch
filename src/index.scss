@@ -1,21 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;200;300;400;500;600;700&display=swap');
+
+
+
 *{
   margin: 0;
   box-sizing: border-box;
+  &::selection{
+    background: #000;
+    color: #fff;
+  }
 }
 
-$primary: #fbeab2;
-$secondary: #34353a;
-$text: rgba($color: #fff, $alpha: .8);
-$stopwatch-width: 40vh;
-$btn-opacity: .5;
+
+
+$border: .71vh;
+
+
 
 html{
   height: fill-available;
 }
 
 body{
-  background: $secondary;
-  font-family: sans-serif;
+  font-family: "Roboto Mono";
   height: 100%;
   display: flex;
   justify-content: center;
@@ -25,33 +32,40 @@ body{
 
 
 .stopwatch{
-  max-width: $stopwatch-width;
-  color: $text;
+  font-weight: 600;
+  width: 60vh;
+  height: 60vh;
+  background-image: url("./images/body.svg");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
   display: flex;
   flex-flow: column;
   align-items: center;
+  padding: 20vh 0 0;
 
   .time-cont{
-    width: $stopwatch-width;
-    height: $stopwatch-width;
-    border: 1.2vh solid rgba($color: #000, $alpha: .4);
-    border-radius: 50%;
+    background: #000;
+    padding: 1vh 3vh;
     display: flex;
     flex-flow: column;
     justify-content: center;
     align-items: center;
+    border-radius: 1vh;
+    border: .5vh solid #fff;
+    outline: $border solid #000;
     .time{
-      font-size: 7vh;
+      color: #fff;
+      font-size: 5vh;
       line-height: 5.4vh;
       text-align: right;
-      :nth-child(2){ font-size: 4.8vh; }
     }
   }
 
   .laps{
     height: 11vh;
     padding: 0 2vh;
-    margin: 2vh 0;
+    margin: 1vh 0 -1vh;
     line-height: 3.2vh;
     letter-spacing: .1vh;
     font-size: 2vh;
@@ -66,8 +80,6 @@ body{
     input{ display: none; }
     input:checked{
       & + label{
-        width: 18vh;
-        border-radius: 3vh;
         .play{ display: none; }
         .pause{ display: block; }
       }
@@ -75,12 +87,12 @@ body{
     }
     // play button
     label{
+      width: 10vh;
+      height: 10vh;
       transition: .2s;
-      width: 12vh;
-      height: 12vh;
-      background: $primary;
       border-radius: 50%;
-      margin: 0 3.2vh;
+      margin: 0 2vh;
+      transform: translateY(4.2vh);
       .play, .pause{ &::after{ background-size: 2vh; } }
       .play::after{ background-image: url('./images/play.svg'); }
       .pause{
@@ -91,11 +103,10 @@ body{
     // side nav buttons
     #resetBtn, #lapBtn{
       visibility: hidden;
-      width: 7vh;
-      height: 7vh;
-      background: lighten($color: $secondary, $amount: 50);
+      width: 8vh;
+      height: 8vh;
       border-radius: 50%;
-      &::after{ background-size: 2.5vh; }
+      &::after{ background-size: 3vh; }
     }
     #resetBtn::after{ background-image: url('./images/reset.svg'); }
     #lapBtn::after{ background-image: url('./images/lap.svg'); }
@@ -107,7 +118,7 @@ body{
       display: flex;
       justify-content: center;
       align-items: center;
-      &:hover{ filter: brightness(90%); }
+      border: $border solid #000;
     }
     label .play, label .pause, #resetBtn, #lapBtn{
       &::after{
@@ -119,7 +130,6 @@ body{
         height: 100%;
         background-position: center;
         background-repeat: no-repeat;
-        opacity: $btn-opacity;
         border-radius: 50%;
       }
     } 
@@ -157,12 +167,9 @@ body{
   background: transparent; 
 }
 ::-webkit-scrollbar-thumb {
-  background: rgba(110, 110, 110, 0.5);
+  background: #000;
   border-radius: .5vh;
   background-clip: border-box;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: rgba(110, 110, 110, 0.8);
 }
 ::-webkit-scrollbar-corner {
   background: rgba(0,0,0,0);
