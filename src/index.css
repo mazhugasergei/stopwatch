@@ -64,8 +64,8 @@ body {
   flex-flow: column;
   justify-content: center;
   align-items: center;
-  border-radius: 1.214285vh;
   border: 0.85vh solid #fff;
+  border-radius: 1.214285vh;
   outline: 0.85vh solid #000;
 }
 .stopwatch .time-cont .time {

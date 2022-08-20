@@ -72,8 +72,8 @@ body{
     flex-flow: column;
     justify-content: center;
     align-items: center;
-    border-radius: $stopwatch-size * .0242857;
     border: $border solid #fff;
+    border-radius: $stopwatch-size * .0242857;
     outline: $border solid #000;
     .time{
       color: #fff;
