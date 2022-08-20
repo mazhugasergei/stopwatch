@@ -73,8 +73,8 @@ body{
     justify-content: center;
     align-items: center;
     border: $border solid #fff;
-    border-radius: $stopwatch-size * .0242857;
     outline: $border solid #000;
+    border-radius: $stopwatch-size * .0242857;
     .time{
       color: #fff;
       font-size: $stopwatch-size * .12142856;
