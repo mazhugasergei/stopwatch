@@ -78,32 +78,34 @@ function App() {
 
   return (
     <div className="stopwatch">
+      <div className="stopwatch-cont">
 
-      {/* Laps List */}
-      <div className="laps">{
-        laps.map((lap)=>(
-          <div key={lap}>{lap}</div>
-        ))
-      }</div>
+        {/* Laps List */}
+        <div className="laps">{
+          laps.map((lap)=>(
+            <div key={lap}>{lap}</div>
+          ))
+        }</div>
 
-      {/* Time Container */}
-      <div className="time-cont">
-        <div className="time">
-          <div>{ m + s + "." + ms }</div>
+        {/* Time Container */}
+        <div className="time-cont">
+          <div className="time">
+            <div>{ m + s + "." + ms }</div>
+          </div>
         </div>
+
+        {/* Navigation */}
+        <nav>
+          <div id="resetBtn" onClick={resetTime}></div>
+          <input id="startBtn" type="checkbox" />
+          <label htmlFor="startBtn" onClick={handleStart}>
+            <div className="play"></div>
+            <div className="pause"></div>
+          </label>
+          <div id="lapBtn" onClick={lap}></div>
+        </nav>
+
       </div>
-
-      {/* Navigation */}
-      <nav>
-        <div id="resetBtn" onClick={resetTime}></div>
-        <input id="startBtn" type="checkbox" />
-        <label htmlFor="startBtn" onClick={handleStart}>
-          <div className="play"></div>
-          <div className="pause"></div>
-        </label>
-        <div id="lapBtn" onClick={lap}></div>
-      </nav>
-
     </div>
   )
 }
