@@ -13,10 +13,10 @@
 
 
 $stopwatch-size: 50vh;
-$border: $stopwatch-size*.017;
+$border: $stopwatch-size * .017;
 
 $stopwatch-size-mobile: 70vw;
-$border-mobile: $stopwatch-size-mobile*.017;
+$border-mobile: $stopwatch-size-mobile * .017;
 
 
 
@@ -27,7 +27,7 @@ html{
 body{
   opacity: .7;
   font-family: "Roboto Mono";
-  height: 100%;
+  height: fill-available;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -58,8 +58,8 @@ body{
     padding: 0 4.76%;
     margin: 2.55% 0;
     line-height: 160%;
-    letter-spacing: $stopwatch-size*.00242856;
-    font-size: $stopwatch-size*.04857141;
+    letter-spacing: $stopwatch-size * .00242856;
+    font-size: $stopwatch-size * .04857141;
     overflow-y: scroll;
   }
 
@@ -72,13 +72,13 @@ body{
     flex-flow: column;
     justify-content: center;
     align-items: center;
-    border-radius: $stopwatch-size*.0242857;
+    border-radius: $stopwatch-size * .0242857;
     border: $border solid #fff;
     outline: $border solid #000;
     .time{
       color: #fff;
-      font-size: $stopwatch-size*.12142856;
-      line-height: $stopwatch-size*.13114284;
+      font-size: $stopwatch-size * .12142856;
+      line-height: $stopwatch-size * .13114284;
       text-align: right;
     }
   }
@@ -97,7 +97,7 @@ body{
     }
     // play button
     label{
-      margin: 0 -1*$border;
+      margin: 0 -1 * $border;
       .play, .pause{ &::after{ background-size: 35%; } }
       .play::after{ background-image: url('./images/play.svg'); }
       .pause{
@@ -123,8 +123,8 @@ body{
     label, #resetBtn, #lapBtn{
       cursor: pointer;
       user-select: none;
-      width: $stopwatch-size*.1942857;
-      height: $stopwatch-size*.1942857;
+      width: $stopwatch-size * .1942857;
+      height: $stopwatch-size * .1942857;
       position: relative;
       display: flex;
       justify-content: center;
@@ -178,29 +178,29 @@ body{
     }
   
     .laps{
-      letter-spacing: $stopwatch-size-mobile*.00242856;
-      font-size: $stopwatch-size-mobile*.04857141;
+      letter-spacing: $stopwatch-size-mobile * .00242856;
+      font-size: $stopwatch-size-mobile * .04857141;
     }
   
     .time-cont{
-      border-radius: $stopwatch-size-mobile*.0242857;
+      border-radius: $stopwatch-size-mobile * .0242857;
       border-width: $border-mobile;
       outline-width: $border-mobile;
       .time{
-        font-size: $stopwatch-size-mobile*.12142856;
-        line-height: $stopwatch-size-mobile*.13114284;
+        font-size: $stopwatch-size-mobile * .12142856;
+        line-height: $stopwatch-size-mobile * .13114284;
       }
     }
   
     nav{
       // play button
       label{
-        margin: 0 $border-mobile*-1;
+        margin: 0 -1 * $border-mobile;
       }
       // all buttons
       label, #resetBtn, #lapBtn{
-        width: $stopwatch-size-mobile*.1942857;
-        height: $stopwatch-size-mobile*.1942857;
+        width: $stopwatch-size-mobile * .1942857;
+        height: $stopwatch-size-mobile * .1942857;
         border-width: $border-mobile;
       }
     }
