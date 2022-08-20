@@ -28,8 +28,8 @@ body {
 
 .stopwatch {
   font-weight: 600;
-  width: 60vh;
-  height: 60vh;
+  width: 70vh;
+  height: 70vh;
   background-image: url("./images/body.svg");
   background-size: contain;
   background-position: center;
@@ -37,33 +37,36 @@ body {
   display: flex;
   flex-flow: column;
   align-items: center;
-  padding: 20vh 0 0;
+  padding: 30.5% 0 0;
+}
+.stopwatch .laps {
+  height: 16.5%;
+  padding: 0 2.8%;
+  margin: 1.5% 0;
+  line-height: 160%;
+  letter-spacing: 0.0999999vh;
+  font-size: 1.9999994vh;
+  overflow-y: scroll;
 }
 .stopwatch .time-cont {
+  width: 100%;
+  max-width: 40%;
   background: #000;
-  padding: 1vh 3vh;
+  padding: 1.4%;
+  margin: 0 0 2.9%;
   display: flex;
   flex-flow: column;
   justify-content: center;
   align-items: center;
-  border-radius: 1vh;
-  border: 0.5vh solid #fff;
-  outline: 0.71vh solid #000;
+  border-radius: 0.9999997vh;
+  border: 0.7999999vh solid #fff;
+  outline: 0.7999999vh solid #000;
 }
 .stopwatch .time-cont .time {
   color: #fff;
-  font-size: 5vh;
-  line-height: 5.4vh;
+  font-size: 4.9999999vh;
+  line-height: 5.3999995vh;
   text-align: right;
-}
-.stopwatch .laps {
-  height: 11vh;
-  padding: 0 2vh;
-  margin: 1vh 0 -1vh;
-  line-height: 3.2vh;
-  letter-spacing: 0.1vh;
-  font-size: 2vh;
-  overflow-y: scroll;
 }
 .stopwatch nav {
   display: flex;
@@ -79,19 +82,11 @@ body {
 .stopwatch nav input:checked + label .pause {
   display: block;
 }
-.stopwatch nav input:checked ~ #lapBtn {
-  visibility: visible;
-}
 .stopwatch nav label {
-  width: 10vh;
-  height: 10vh;
-  transition: 0.2s;
-  border-radius: 50%;
-  margin: 0 2vh;
-  transform: translateY(4.2vh);
+  margin: 0 -0.7999999vh;
 }
 .stopwatch nav label .play::after, .stopwatch nav label .pause::after {
-  background-size: 2vh;
+  background-size: 35%;
 }
 .stopwatch nav label .play::after {
   background-image: url("./images/play.svg");
@@ -102,14 +97,16 @@ body {
 .stopwatch nav label .pause::after {
   background-image: url("./images/pause.svg");
 }
-.stopwatch nav #resetBtn, .stopwatch nav #lapBtn {
-  visibility: hidden;
-  width: 8vh;
-  height: 8vh;
-  border-radius: 50%;
-}
 .stopwatch nav #resetBtn::after, .stopwatch nav #lapBtn::after {
-  background-size: 3vh;
+  background-size: 47%;
+}
+.stopwatch nav #resetBtn {
+  border-top-left-radius: 30%;
+  border-bottom-left-radius: 30%;
+}
+.stopwatch nav #lapBtn {
+  border-top-right-radius: 30%;
+  border-bottom-right-radius: 30%;
 }
 .stopwatch nav #resetBtn::after {
   background-image: url("./images/reset.svg");
@@ -123,11 +120,13 @@ body {
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
+  width: 7.9999997vh;
+  height: 7.9999997vh;
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 0.71vh solid #000;
+  border: 0.7999999vh solid #000;
 }
 .stopwatch nav label .play::after, .stopwatch nav label .pause::after, .stopwatch nav #resetBtn::after, .stopwatch nav #lapBtn::after {
   content: "";
@@ -138,7 +137,6 @@ body {
   height: 100%;
   background-position: center;
   background-repeat: no-repeat;
-  border-radius: 50%;
 }
 
 ::-webkit-scrollbar {
@@ -157,4 +155,35 @@ body {
 
 ::-webkit-scrollbar-corner {
   background: rgba(0, 0, 0, 0);
+}
+
+@media screen and (orientation: portrait) {
+  .stopwatch {
+    width: 90vw;
+    height: 90vw;
+  }
+  .stopwatch .laps {
+    letter-spacing: 0.1285713vw;
+    font-size: 2.5714278vw;
+  }
+  .stopwatch .time-cont {
+    border-radius: 1.2857139vw;
+    border-width: 1.0285713vw;
+    outline-width: 1.0285713vw;
+  }
+  .stopwatch .time-cont .time {
+    font-size: 6.4285713vw;
+    line-height: 6.9428565vw;
+  }
+  .stopwatch nav label {
+    margin: 0 -1.0285713vw;
+  }
+  .stopwatch nav label, .stopwatch nav #resetBtn, .stopwatch nav #lapBtn {
+    width: 10.2857139vw;
+    height: 10.2857139vw;
+    border-width: 1.0285713vw;
+  }
+  ::-webkit-scrollbar {
+    width: 1vw;
+  }
 }/*# sourceMappingURL=index.css.map */

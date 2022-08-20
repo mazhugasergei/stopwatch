@@ -27,7 +27,6 @@ function App() {
     // onPlay
     else{
       setIsPlaying(true)
-      document.body.querySelector('#resetBtn').style.visibility = "visible"
       setStartTime(Date.now())
       playTime()
     }
@@ -61,7 +60,6 @@ function App() {
 
   function resetTime(){
     document.body.querySelector('#startBtn').checked = false
-    document.body.querySelector('#resetBtn').style.visibility = "hidden"
     setTimeout(()=>{
       setIsPlaying(false)
       setTime(null)
@@ -81,19 +79,19 @@ function App() {
   return (
     <div className="stopwatch">
 
-      {/* Time Container */}
-      <div className="time-cont">
-        <div className="time">
-          <div>{ m + s + "." + ms }</div>
-        </div>
-      </div>
-
       {/* Laps List */}
       <div className="laps">{
         laps.map((lap)=>(
           <div key={lap}>{lap}</div>
         ))
       }</div>
+
+      {/* Time Container */}
+      <div className="time-cont">
+        <div className="time">
+          <div>{ m + s + "." + ms }</div>
+        </div>
+      </div>
 
       {/* Navigation */}
       <nav>
